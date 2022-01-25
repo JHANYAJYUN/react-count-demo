@@ -17,7 +17,7 @@
 
 <div align="center">
   <a href="https://nodejs.org/en/">
-    <img src="https://img.shields.io/badge/node-%3E%3D%208.0.0-green.svg" alt="Node Version">
+    <img src="https://img.shields.io/badge/node-%3E%3D%2014.0.0-green.svg" alt="Node Version">
   </a>
   <a href="https://nicelinks.site/post/5c16083e819ae45de1453caa">
     <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat" alt="Prettier">
@@ -26,8 +26,7 @@
 
 ## Prerequisites
 
-You Need install or upgrade [Node.js](https://nodejs.org/en/) (>= `14.*`, Npm version >= `6.14.0`, 
-
+You Need install or upgrade [Node.js](https://nodejs.org/en/) (>= `14.*`, Npm version >= `6.14.0`)
 ## Installation
 
 install node.js & npm 
@@ -42,6 +41,9 @@ npm install @babel/preset-typescript  --save-dev
 install eslint
 npm install eslint-plugin-typescript --save-dev
 npm install @typescript-eslint/parser --save-dev
+
+install chakra
+npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^5
 
 ## Usage
 
