@@ -37,45 +37,56 @@ function reducer(state: State, action: Action) {
 }
 
 function Counter(): JSX.Element {
+  const maxVal: number = 100;
+  const minVal: number = 0;
   const [state, dispatch] = useReducer(reducer, initState);
   return (
-    <div>
-      <SimpleGrid columns={1} spacing={10}>
-        <Box height="100px">
+    <div className='main-page'>
+      <SimpleGrid columns={1} spacing={{ base: 12, md: 16, lg: 20 }}>
+        <Box height={{ base: '100px', md: '120px' }}>
           <Center>
-            <Text
-              bgGradient="linear(to-l, #7928CA, #FF0080)"
-              bgClip="text"
-              fontSize="5xl"
-              fontWeight="extrabold"
+            <Text 
+              fontSize={{ base: '42px', md: '60px', lg: '64px' }}
+              bgGradient='linear(to-l, #7928CA, #FF0080)'
+              bgClip='text'
+              fontWeight='extrabold'
             >
               Simple Counter
             </Text>
           </Center>
         </Box>
-        <Wrap align="center" justify="center">
+        <Wrap align='center' justify='center'>
           <Flex>
             <IconButton
-              aria-label= ''
-              size="lg"
+              className='icon-button'
+              isDisabled={state.count >= maxVal}
+              aria-label= 'add-btn'
+              size='lg'
+              fontSize={{ base: '16px', md: '24px', lg: '32px' }}
+              w={{  md: '60px', lg: '72px' }}
+              h={{  md: '60px', lg: '72px' }}
               icon={<AddIcon />}
               onClick={() => dispatch({ type: 'increase' })}
             />
             <Center>
               <Text
-                className="custom-input"
-                w="200px"
-                fontSize="2rem"
-                fontWeight="semibold"
-                color="gray.500"
-                isTruncated
+                className='custom-text'
+                w={{  base: '150px', lg: '200px' }}
+                fontSize={{ base: '32px', md: '36px', lg: '48px' }}
+                fontWeight='semibold'
+                color='gray.500'
               >
                 {state.count}
               </Text>
             </Center>
             <IconButton
-              aria-label= ''
-              size="lg"
+              className='icon-button'
+              isDisabled={state.count <= minVal}
+              aria-label= 'minus-btn'
+              size='lg'
+              fontSize={{ md: '24px', lg: '32px' }}
+              w={{  md: '60px', lg: '72px' }}
+              h={{  md: '60px', lg: '72px' }}
               icon={<MinusIcon />}
               onClick={() => dispatch({ type: 'decrease' })}
             />
@@ -83,10 +94,10 @@ function Counter(): JSX.Element {
         </Wrap>
         <Center>
           <Button
-            colorScheme="blue"
-            w="200px"
-            size="lg"
-            fontSize="1.5rem"
+            colorScheme='blue'
+            w={{ base: '246px', md: '270px', lg: '344px' }}
+            height={{  base: '48px', md: '55px', lg: '70px' }}
+            fontSize={{ base: '24px', md: '32px', lg: '35px' }}
             onClick={() => dispatch({ type: 'reset' })}
           >
             Reset

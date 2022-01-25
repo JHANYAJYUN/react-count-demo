@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#root {
+  background-image: url('../public/bg.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .main-page {
+    height: 65vh;
+
+    .custom-text {
+      text-align: center;
+    }
+  }    
+}
